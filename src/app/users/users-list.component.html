@@ -1,3 +1,6 @@
+<header>
+  <button class="addUser btn btn-primary">Adicionar usuário</button>
+</header>
 <div class="parentHeader bg-light">
   <div class="div1"><input class="boxCheck" type="checkbox"> USER DETAILS </div>
   <div class="div2">ROLE</div>
@@ -6,17 +9,17 @@
 </div>
 <div class="parent"  *ngFor="let  user of users">
   <div class="div10">
-    <input class="boxCheck" type="checkbox"><img [src]="user.imageUrl" [alt]="user.name" width="120" height="120">
+    <input class="boxCheck" type="checkbox"><img class="userImg" [src]="user.imageUrl" [alt]="user.name" width="120" height="120">
     <div class="detailsUser">
       <span class="userName">{{user.name}}</span>
-      <span class="userMail">{{user.personalEmail}}</span>
-      <span class="userProMail">{{user.professionalEmail}}</span>
+      <span class="userMail"><img src="/assets/images/normalMail.png" alt="mailIcon" width="20" height="20"> {{user.personalEmail}}</span>
+      <span class="userProMail"><img *ngIf="user.professionalEmail" src="/assets/images/bussinessMail.png" alt="mailIcon" width="20" height="20"> {{user.professionalEmail}}</span>
       <span class="addedOn">Added on: {{user.addedOn}}</span></div>
     </div>
   <div class="div5">{{user.role}}</div>
   <div class="div6">{{user.department}}</div>
   <div class="div7">{{user.submitsTo}}</div>
-  <div class="div8"><button class="editBtn btn btn-primary">Editar</button></div>
+  <div class="div8"><a [routerLink]="['/users', user.id]" class="editBtn btn btn-primary">Editar</a></div>
   <div class="div9"><button class="delBtn btn btn-danger">Excluir</button></div>
 </div>
 

@@ -31,13 +31,13 @@ padding: 5px;
   margin: 0 15px 0 15px;
 }
 
-.parent .div10 img {
+.userImg {
   border-radius: 50%;
 }
 
 .editBtn, .delBtn {
-  font-weight: 500;
   width: 90%;
+  font-weight: 500;
   font-size: 18px;
   padding: 0;
 }
@@ -69,10 +69,30 @@ padding: 5px;
 .div10 .detailsUser .userName {
   color: var(--bs-primary);
   font-weight: 500;
+  font-size: 1.1em;
 }
 
 .div10 .detailsUser .addedOn {
   margin-top: 30px;
   font-size: 0.9em;
   color: var(--bs-gray-500);
+}
+
+.div5, .div6, .div7 {
+  margin-top: 10px;
+}
+
+header {
+  height: 200px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+header button {
+  width: 250px;
+  margin: 0 140px 30px;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 0;
 }
