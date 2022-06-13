@@ -1,0 +1,60 @@
+<div class="parentHeader bg-light">
+  <div class="div1"><input class="boxCheck" type="checkbox"> USER DETAILS </div>
+  <div class="div2">ROLE</div>
+  <div class="div3">DEPARTMENT</div>
+  <div class="div4">SUBMITS TO</div>
+</div>
+<div class="parent"  *ngFor="let  user of users">
+  <div class="div10">
+    <input class="boxCheck" type="checkbox"><img [src]="user.imageUrl" [alt]="user.name" width="120" height="120">
+    <div class="detailsUser">
+      <span class="userName">{{user.name}}</span>
+      <span class="userMail">{{user.personalEmail}}</span>
+      <span class="userProMail">{{user.professionalEmail}}</span>
+      <span class="addedOn">Added on: {{user.addedOn}}</span></div>
+    </div>
+  <div class="div5">{{user.role}}</div>
+  <div class="div6">{{user.department}}</div>
+  <div class="div7">{{user.submitsTo}}</div>
+  <div class="div8"><button class="editBtn btn btn-primary">Editar</button></div>
+  <div class="div9"><button class="delBtn btn btn-danger">Excluir</button></div>
+</div>
+
+
+<!-- <table class="table">
+  <thead>
+    <tr>
+      <th><input type="checkbox"></th>
+      <th>USER DETAILS</th>
+      <th>ROLE</th>
+      <th>DEPARTMENT</th>
+      <th>SUBMITS TO</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let  user of users" style="border-top: 0">
+    <tr>
+      <td rowspan='2' ><input type="checkbox"></td>
+      <td rowspan='2'>
+        <img [src]="user.imageUrl" [alt]="user.name" width="25" height="25">
+        <a>{{user.name}}</a>
+        <p>{{user.personalEmail}}</p>
+        <a>{{user.professionalEmail}}</a>
+        <p>{{user.addedOn}}</p>
+      </td>
+      <td>{{user.role}}</td>
+      <td>{{user.department}}</td>
+      <td>{{user.submitsTo}}</td>
+
+    </tr>
+    <tr>
+      <td class="buttonTd" rowspan='1' colspan='3'>
+        <a class="btn btn-primary">Editar</a>
+        <button class="btn btn-danger">Excluir</button>
+      </td>
+    </tr>
+    <hr>
+  </tbody>
+</table> -->
+
+      <!-- <a [routerLink]="['/users/info', user.id]" class="btn btn-primary">Edit</a>
+      <button (click)="deleteById(user.id)" class="btn btn-danger">Delete</button> -->

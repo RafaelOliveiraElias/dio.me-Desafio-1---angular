@@ -1,0 +1,78 @@
+.parent {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border-bottom: 1px var(--bs-gray-200) solid;
+}
+
+.parentHeader {
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+grid-template-rows: repeat(1, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+padding: 5px;
+}
+
+
+.parentHeader{
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--bs-gray-700);
+  border-top: 2px var(--bs-gray-200) solid;
+  border-bottom: 2px var(--bs-gray-200) solid;
+  box-shadow: 0 1px 1px 0px white inset, 0 -2px 2px 0px white inset,;
+}
+
+.parentHeader input, 
+.parent input {
+  margin: 0 15px 0 15px;
+}
+
+.parent .div10 img {
+  border-radius: 50%;
+}
+
+.editBtn, .delBtn {
+  font-weight: 500;
+  width: 90%;
+  font-size: 18px;
+  padding: 0;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 6; }
+.div2 { grid-area: 1 / 7 / 2 / 9; }
+.div3 { grid-area: 1 / 9 / 2 / 11; }
+.div4 { grid-area: 1 / 11 / 2 / 13; }
+
+.div5 { grid-area: 2 / 7 / 4 / 9; }
+.div6 { grid-area: 2 / 9 / 4 / 11; }
+.div7 { grid-area: 2 / 11 / 4 / 13; }
+.div8 { grid-area: 4 / 7 / 5 / 10; }
+.div9 { grid-area: 4 / 10 / 5 / 13; }
+.div10 {
+  grid-area: 2 / 1 / 5 / 6;
+  padding: 10px 5px;
+  display: flex;
+  align-items: center;
+}
+.div10 .detailsUser {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.div10 .detailsUser .userName {
+  color: var(--bs-primary);
+  font-weight: 500;
+}
+
+.div10 .detailsUser .addedOn {
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: var(--bs-gray-500);
+}
