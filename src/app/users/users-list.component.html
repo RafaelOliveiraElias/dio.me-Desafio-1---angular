@@ -20,7 +20,7 @@
   <div class="div6">{{user.department}}</div>
   <div class="div7">{{user.submitsTo}}</div>
   <div class="div8"><a [routerLink]="['/users', user.id]" class="editBtn btn btn-primary">Editar</a></div>
-  <div class="div9"><button class="delBtn btn btn-danger">Excluir</button></div>
+  <div class="div9"><button (click)="deleteById(user.id)" class="delBtn btn btn-danger">Excluir</button></div>
 </div>
 
 

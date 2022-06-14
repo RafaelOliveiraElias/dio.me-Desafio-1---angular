@@ -1,5 +1,6 @@
 import { User } from "./user";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,10 @@ export class UserService {
       const index = users.findIndex((each: User) => each.id === user.id);
       users[index] = user;
     }
+  }
+
+  deleteById(id: number) {
+    users = users.filter((each) => each.id !== id)
   }
 }
 
