@@ -13,6 +13,13 @@ export class UserService {
   retriveById(id: number ) {
     return users.find((each) => each.id === id);
   }
+
+  save(user: any): void {
+    if (user.id) {
+      const index = users.findIndex((each: User) => each.id === user.id);
+      users[index] = user;
+    }
+  }
 }
 
 let users = [{
