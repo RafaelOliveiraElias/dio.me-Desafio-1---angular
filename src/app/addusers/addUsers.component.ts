@@ -18,7 +18,7 @@ export class AddUsersComponent implements OnInit {
     this.users = this.userService.retrieveAll();
   }
   user: User = {
-    id: Number(this.users.length) + 1,
+    id: 0,
     name: '',
     imageUrl: '',
     personalEmail: '',
@@ -31,7 +31,8 @@ export class AddUsersComponent implements OnInit {
   save():void {
     const timeNow: string = new Date().toLocaleString();
 
-    this.user.addedOn = timeNow;
+    this.user.addedOn = timeNow.replace('/', '.');
+    this.user.id = this.users.length + 1
     this.userService.retrieveAll().push(this.user)
     this.subbitted = true;
   }
