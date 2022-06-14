@@ -2,10 +2,11 @@
 
 <hr/>
 
-<form #userForm="ngForm" *ngIf="user">
-  <div>
-    <input (change)="handleUpload($event)" name="imageUrl" class="fileType" type="file">
-    <img (src)="user.imageUrl" alt="text">
+<form #userForm="ngForm" class="boxForm" *ngIf="user">
+  <div class="imgDiv">
+    <label for="form-control" class="col-sm-2 col-from-label"> Profile picture: </label>
+    <img [src]="user.imageUrl" alt="text" width="120" height="120">
+    <input [(ngModel)]="user!.imageUrl" required name="imageUrl" #userimageUrl="ngModel" [ngClass]="{'is-invalid': userimageUrl.invalid}" class="form-control">
   </div>
   <div class="form-group row">
     <label for="form-control" class="col-sm-2 col-from-label"> User Name: </label>
@@ -30,11 +31,34 @@
   <div class="form-group row">
     <label for="form-control" class="col-sm-2 col-from-label"> Professional Email: </label>
     <div class="col-sm-10">
-      <input [(ngModel)]="user.professionalEmail" name="rating" #userProfessionalEmail="ngModel" >
+      <input [(ngModel)]="user.professionalEmail" name="professionalEmail" #userProfessionalEmail="ngModel" class="form-control">
     </div>
   </div>
 
+  <div class="form-group row">
+    <label for="form-control" class="col-sm-2 col-from-label"> Role: </label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="user.role" name="role" #userRole="ngModel" class="form-control">
+    </div>
+  </div>
 
-  <button [disabled]="userForm.invalid" class="btn btn-primary m-20">Salvar</button>
+  <div class="form-group row">
+    <label for="form-control" class="col-sm-2 col-from-label"> Department: </label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="user.department" name="department" #userDepartament="ngModel" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="form-control" class="col-sm-2 col-from-label"> Submits to: </label>
+    <div class="col-sm-10">
+      <input [(ngModel)]="user.submitsTo" name="submitsTo" #usersubmitsTo="ngModel" class="form-control">
+    </div>
+  </div>
+
+  <button [disabled]="userForm.invalid" (click)="save()" class="btn btn-primary m-20">Salvar</button>
   <button [routerLink]="['']" class="btn btn-secondary">Voltar</button>
+  <div *ngIf="subbitted" class="alert alert-success" role="alert">
+    <span>New user saved!</span>
+  </div>
 </form>

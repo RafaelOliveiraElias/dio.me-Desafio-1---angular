@@ -5,15 +5,13 @@ import { User } from "./user";
 import { UserService } from "./user.service";
 
 @Component({
-  templateUrl: './user-info.component.html'
+  templateUrl: './user-info.component.html',
+  styleUrls:['./user-info.component.css']
 })
 export class UserInfoComponent implements OnInit {
   user?: User;
-  pathName!: string;
+  subbitted: boolean = false;
 
-  handleUpload(e: any):void{
-    this.user!.imageUrl = e.target.value
-  }
 
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService) { }
 
@@ -23,5 +21,6 @@ export class UserInfoComponent implements OnInit {
 
   save(): void {
     this.userService.save(this.user);
+    this.subbitted = true;
   }
 }

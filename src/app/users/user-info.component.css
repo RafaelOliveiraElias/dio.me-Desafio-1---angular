@@ -1,0 +1,6 @@
+.boxForm {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: space-around;
+}
